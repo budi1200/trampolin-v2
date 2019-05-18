@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, NetInfo } from 'react-native';
+import { View, Text } from 'react-native';
+import NetInfo from "@react-native-community/netinfo";
 
 export default class NetworkInfo extends Component{
 
