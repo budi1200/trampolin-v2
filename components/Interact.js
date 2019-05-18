@@ -12,7 +12,7 @@ import { Navigation } from 'react-native-navigation';
 import axios from 'react-native-axios';
 
 import LoadingCircle from './LoadingCircle';
-import { getSheetUrl } from './future40_data';
+import { getSheetUrl } from './trampolin_data';
 import { addIconTopBar, handleButtonPress } from './customFunctions';
 
 export default class Interact extends Component {

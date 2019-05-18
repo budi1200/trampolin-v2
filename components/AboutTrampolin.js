@@ -12,11 +12,11 @@ import { Navigation } from 'react-native-navigation';
 import axios from 'react-native-axios';
 
 import LoadingCircle from './LoadingCircle';
-import { getSheetUrl } from './future40_data';
+import { getSheetUrl } from './trampolin_data';
 import { addIconTopBar, handleButtonPress } from './customFunctions';
 import { styles } from './styles';
 
-export default class AboutFuture extends Component {
+export default class AboutTrampolin extends Component {
 
 	constructor(props){
 		super(props)
@@ -37,7 +37,7 @@ export default class AboutFuture extends Component {
             name: 'CustomTopBarTitle',
             alignment: 'center',
             passProps: {
-              title: 'About Future'
+              title: 'About Trampolin'
             }
           }
         },
@@ -69,7 +69,7 @@ export default class AboutFuture extends Component {
 
 	async componentDidMount(){
 		// Adds icon in the top bar
-		addIconTopBar("AboutFuture");
+		addIconTopBar("AboutTrampolin");
 
 		if((await AsyncStorage.getItem(this.props.componentId)) != null){
 			this.setState({
@@ -91,12 +91,12 @@ export default class AboutFuture extends Component {
 		return (
 		  <ScrollView>
   	  		{!this.state.about ? <LoadingCircle/> : this.state.about.map((about, index) => {
-            if(about.name == "Future"){
+            if(about.name == "Trampolin"){
   	  		    return(
 						  		<View key={index}>
 						  			<Image style={{ height: 250, resizeMode: 'contain'}} source={{ uri: about.picture }}/>
 										<View style={styles.aboutWrapper}>
-											<Text style={styles.aboutTitle}>Future 4.0</Text>
+											<Text style={styles.aboutTitle}>Trampolin</Text>
 						  				<Text style={styles.aboutDesc}>{about.description}</Text>
 										</View>
 						  		</View>

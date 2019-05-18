@@ -53,7 +53,8 @@ export const styles = StyleSheet.create({
   active: {
     //backgroundColor: 'rgba(236, 57, 139, 0.24)',
     //backgroundColor: 'rgba(137, 119, 236, 0.24)',
-    backgroundColor: 'rgba(85, 75, 185, 0.24)',
+    //backgroundColor: 'rgba(85, 75, 185, 0.24)',
+    backgroundColor: 'rgba(0, 134, 200, 0.6)'
   },
 
   scheduleWrapper: {

@@ -37,7 +37,7 @@ export const configSch = {
 											bottomTab: {
 												text: 'Day 1',
 												fontFamily: 'Akrobat-SemiBold',
-												icon: require('./img/calendar27.png')
+												//icon: require('./img/calendar27.png')
 											},
 										}
 									},
@@ -53,7 +53,7 @@ export const configSch = {
 											bottomTab: {
 												text: 'Day 2',
 												fontFamily: 'Akrobat-SemiBold',
-												icon: require('./img/calendar28.png')
+												//icon: require('./img/calendar28.png')
 											}
 										}
 									},

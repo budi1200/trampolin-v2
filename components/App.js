@@ -17,10 +17,10 @@ import firebase from 'firebase';
 import { config } from '../fireConn';
 
 import LoadingCircle from './LoadingCircle';
-import { getSheetUrl } from './future40_data';
+import { getSheetUrl } from './trampolin_data';
 import { addIconTopBar, handleButtonPress } from './customFunctions';
 import { styles } from './styles';
-import { configSch } from './scheduleConfig';
+import { configSch } from './no_use/scheduleConfig';
 
 firebase.initializeApp(config);
 
@@ -45,7 +45,7 @@ export default class App extends Component {
             name: 'CustomTopBarTitle',
             alignment: 'center',
             passProps: {
-                title: 'Future 4.0'
+                title: 'Trampolin'
             }
           }
         },
@@ -66,6 +66,7 @@ export default class App extends Component {
   handleSheet = (sheet) => {
     getSheetUrl(sheet, (url) => {
       axios.get(url).then(result => {
+				console.log(result, "result");
         if(this.state.mounted){
           this.setState({
             [sheet]: result.data[sheet],
@@ -147,16 +148,8 @@ export default class App extends Component {
       <ScrollView>
         <Image style={{resizeMode: 'cover', height: 60, width: Dimensions.get("window").width}} source={require('./img/Banner2-2.png')}/>
 
-	  		{/*<View style={styles.cardWrapper}>
-          <Image style={{ height: 200, width: '100%', resizeMode: 'cover', alignSelf: 'center', borderRadius: 10 }} source={require('./img/welcome.png')}/>
-          <View style={styles.cardTextWrapper}>
-          	<Text style={[styles.cardTitle, {fontWeight: 'bold'}]}>What is Future 4.0*</Text>
-          	<Text style={styles.cardDesc}>SAŠA Incubator presents a new dimension of the event with 100% focus on the Industry 4.0 and cultarized matchmaking.</Text>
-	  				<Text style={styles.cardDesc}>Our main goal is to directly connect Industrial Corporations and Startups from the Balkan region which are or could be related to the for Industry 4.0</Text>
-          </View>*/}
-
 				{!this.state.news ? <View style={styles.inner}><LoadingCircle/></View> : this.state.news.map((news, index) => {
-      	  if(moment().isBetween(moment(news.show_from, "YYYY-MM-DD"), moment(news.show_to, "YYYY-MM-DD"), null, [])){
+      	  if(moment().isBetween(moment(news.show_from, "YYYY-MM-DD"), moment(news.show_to, "YYYY-MM-DD"), null, []) || news.show_to == ''){
       	    return(
   	  	      <View key={index} style={styles.cardWrapper}>
       	        <Image style={{ height: 200, width: '100%', resizeMode: 'cover', alignSelf: 'center', borderRadius: 12}} source={{ uri: news.picture }}/>
@@ -166,14 +159,6 @@ export default class App extends Component {
       	        </View>
 								{news.show_buttons ? 
 									<View style={{flex: 1, alignItems: 'center', marginTop: 25}}>
-
-										<TouchableOpacity onPress={() => this.changeScreen("Schedule")}>
-	  									<Image style={{width: 300, height: 84, resizeMode: 'cover'}} source={require("./img/schedule.png")}/>
-										</TouchableOpacity>
-
-										<TouchableOpacity onPress={() => this.changeScreen("Corporations")}>
-	  									<Image style={{width: 300, height: 85, resizeMode: 'cover'}} source={require("./img/corporations.png")}/>
-										</TouchableOpacity>
 
 										<TouchableOpacity onPress={() => this.changeScreen("Startups")}>
 	  									<Image style={{width: 300, height: 85, resizeMode: 'cover'}} source={require("./img/startups.png")}/>

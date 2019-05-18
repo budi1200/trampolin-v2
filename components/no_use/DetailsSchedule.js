@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import moment from 'moment';
 
-import { styles } from './styles';
+import { styles } from '../styles';
 export default class DetailsSchedule extends Component{
   render(){
     return(

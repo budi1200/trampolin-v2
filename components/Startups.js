@@ -11,7 +11,7 @@ import { Text, ScrollView, View, TouchableNativeFeedback, Image, Platform, Touch
 import { Navigation } from 'react-native-navigation';
 import ImageSvg from 'react-native-remote-svg'
 
-import { getSheetUrl } from './future40_data';
+import { getSheetUrl } from './trampolin_data';
 import axios from 'react-native-axios';
 import { addIconTopBar, handleButtonPress, changeScreen } from './customFunctions';
 import LoadingCircle from './LoadingCircle';
