@@ -25,6 +25,8 @@ if(Platform.OS == 'android'){
   };
 }
 
+
+
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {

@@ -1,4 +1,4 @@
-package com.future40;
+package com.trampolin;
 
 import com.reactnativenavigation.NavigationActivity;
 
