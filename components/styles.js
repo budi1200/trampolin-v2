@@ -199,13 +199,13 @@ export const styles = StyleSheet.create({
   },
 
   detailsWrapper: {
-    paddingLeft: 16,
-    paddingRight: 16
+    paddingLeft: 14,
+    paddingRight: 14
   },
   detailsTitle: {
-    fontSize: 24,
+    fontSize: 28,
     color: primaryColor,
-		marginBottom: 4,
+		marginBottom: 6,
 		fontFamily: 'Akrobat-Bold'
   },
   detailsDesc: {
@@ -215,14 +215,16 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: '#818181',
   },
+  detailsMembersTitle: {
+    fontFamily: 'Akrobat-Bold',
+    fontSize: 24,
+    marginLeft: -2,
+    marginBottom: 4,
+    color: 'black'
+  },
   detailsWebsiteWrapper: {
-    flex: 1,
-    flexDirection: 'row',
-    marginLeft: 8,
-    marginTop: 16,
-    marginBottom: 16,
     padding: 8,
-    alignSelf: 'flex-start',
+    borderRadius: 6
   },
   detailsWebsiteText: {
     color: primaryColor,
@@ -323,5 +325,37 @@ export const styles = StyleSheet.create({
 		}),
     backgroundColor: primaryColor,
     borderRadius: 48
+  },
+  memberEntryWrapper:{
+    padding: 6,
+    borderRadius: 6,
+    marginBottom: 2
+  },
+  memberEntryInnerWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  memberEntryThumbnail: {
+    width: 64,
+    height: 64,
+    resizeMode: 'cover',
+    borderRadius: 64/2
+  },
+  memberEntryDetails: {
+    flex: 1,
+    flexDirection: 'column',
+    paddingLeft: 14
+  },
+  memberEntryName: {
+    fontFamily: 'Akrobat-SemiBold',
+    fontSize: 18,
+    color: 'black'
+  },
+  memberEntryPosition: {
+    marginTop: 3,
+    marginLeft: 1,
+    fontSize: 12,
+    color: 'grey'
   }
 })

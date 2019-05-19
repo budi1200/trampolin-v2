@@ -146,7 +146,7 @@ export default class App extends Component {
   render() {
     return (
       <ScrollView>
-        <Image style={{resizeMode: 'cover', height: 60, width: Dimensions.get("window").width}} source={require('./img/Banner2-2.png')}/>
+        <Image style={{resizeMode: 'contain', height: 50, width: Dimensions.get("window").width}} source={require('./img/Banner2-2.jpg')}/>
 
 				{!this.state.news ? <View style={styles.inner}><LoadingCircle/></View> : this.state.news.map((news, index) => {
       	  if(moment().isBetween(moment(news.show_from, "YYYY-MM-DD"), moment(news.show_to, "YYYY-MM-DD"), null, []) || news.show_to == ''){
@@ -161,7 +161,7 @@ export default class App extends Component {
 									<View style={{flex: 1, alignItems: 'center', marginTop: 25}}>
 
 										<TouchableOpacity onPress={() => this.changeScreen("Startups")}>
-	  									<Image style={{width: 300, height: 85, resizeMode: 'cover'}} source={require("./img/startups.png")}/>
+											<Image style={{width: 300, height: 85, resizeMode: 'contain'}} source={require("./img/startups_glow.png")}/>
 										</TouchableOpacity>
 	  							</View> : null}
       	      </View>

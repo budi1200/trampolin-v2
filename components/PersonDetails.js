@@ -28,7 +28,7 @@ export default class PersonDetails extends Component{
 
         <View style={styles.personDetailsContact}>
           {person.email !== '' ? 
-            <DynamicButton style={styles.personDetailsContactIcon} borderRadius={styles.personDetailsContactIcon.borderRadius} onPress={() => Linking.openURL("mailto:" + person.email)} onLongPress={() => Clipboard.setString(person.email)}>
+            <DynamicButton style={styles.personDetailsContactIcon} onPress={() => Linking.openURL("mailto:" + person.email)} onLongPress={() => Clipboard.setString(person.email)}>
               <View>
                 <MaterialCommunityIcons name={'email-outline'} size={24} color={'white'}/>
               </View>           
@@ -36,7 +36,7 @@ export default class PersonDetails extends Component{
           : null}
 
           {person.linkedin !== '' ? 
-            <DynamicButton style={styles.personDetailsContactIcon} borderRadius={styles.personDetailsContactIcon.borderRadius} onPress={() => Linking.openURL(person.linkedin)}>
+            <DynamicButton style={styles.personDetailsContactIcon} onPress={() => Linking.openURL(person.linkedin)}>
               <View>
                 <MaterialCommunityIcons name={'linkedin'} size={24} color={'white'}/>
               </View>           
@@ -44,7 +44,7 @@ export default class PersonDetails extends Component{
           : null}
 
           {person.phone !== '' ? 
-            <DynamicButton style={styles.personDetailsContactIcon} borderRadius={styles.personDetailsContactIcon.borderRadius} onPress={() => Linking.openURL("tel:" + person.phone)} onLongPress={() => Clipboard.setString(person.phone)}>
+            <DynamicButton style={styles.personDetailsContactIcon} onPress={() => Linking.openURL("tel:" + person.phone)} onLongPress={() => Clipboard.setString(person.phone)}>
               <View>
                 <MaterialCommunityIcons name={'phone'} size={24} color={'white'}/>
               </View>           
