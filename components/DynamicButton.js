@@ -7,7 +7,7 @@ export default class DynamicButton extends Component {
   render() {
     if(Platform.OS == "android"){
       return(
-        <View style={{overflow: "hidden"}} borderRadius={this.props.style.borderRadius ? this.props.style.borderRadius : 0}>
+        <View style={{overflow: "hidden"}} borderRadius={this.props.style ? this.props.style.borderRadius ? this.props.style.borderRadius : 0 : 0}>
           <TouchableNativeFeedback delayPressIn={0} onPress={this.props.onPress}>
             <View style={this.props.style}>
               {this.props.children}

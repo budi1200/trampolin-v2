@@ -103,34 +103,31 @@ export const styles = StyleSheet.create({
 		fontFamily: 'Akrobat-SemiBold'
   },
 
-  listCardWrapper: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingLeft: 16,
-    paddingRight: 16,
-    paddingTop: 8,
-    paddingBottom: 8,
+  listCardOuterWrapper: {
     marginLeft: 6,
     marginRight: 6,
     marginTop: 3,
     marginBottom: 3,
     borderColor: '#dadce0',
     borderWidth: 1,
-    borderRadius: 8
+    borderRadius: 6
+  },
+  listCardWrapper: {
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingTop: 8,
+    paddingBottom: 8,
+    borderRadius: 6
+  },
+  listCardInnerWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   listCardImage: {
     height: 96,
     width: 96,
-    marginRight: 16,
-    ...Platform.select({
-			ios: {
-        borderRadius: 50
-			},
-			android: {
-        borderRadius: 200
-			},
-		}),
+    borderRadius: 96/2,
   },
   listCardText: {
     fontSize: 16,

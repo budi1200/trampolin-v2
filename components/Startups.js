@@ -7,7 +7,7 @@
  */
 
 import React, { Component } from 'react';
-import { Text, ScrollView, View, TouchableNativeFeedback, Image, Platform, TouchableHighlight, AsyncStorage } from 'react-native';
+import { Text, ScrollView, View, Image, AsyncStorage } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import ImageSvg from 'react-native-remote-svg'
 
@@ -16,6 +16,7 @@ import axios from 'react-native-axios';
 import { addIconTopBar, handleButtonPress, changeScreen } from './customFunctions';
 import LoadingCircle from './LoadingCircle';
 import { styles } from './styles';
+import DynamicButton from './DynamicButton';
 
 export default class Startups extends Component {
 
@@ -61,7 +62,7 @@ export default class Startups extends Component {
 					if(this.state.mounted){
 	    	  	this.setState({
 	    	  	    [sheet]: result.data[sheet],
-						}, () => {sheet === 'startups' ? AsyncStorage.setItem(this.props.componentId, JSON.stringify(this.state[sheet])) : this.assignMembers()})
+						}, () => {sheet === 'members' ? this.assignMembers() : this.handleSheet("members")})
 					}
 	    	})
 	  })
@@ -80,7 +81,7 @@ export default class Startups extends Component {
 
 		this.setState({
 			finalStartups: modifiedStartups
-		})
+		}, () => AsyncStorage.setItem(this.props.componentId, JSON.stringify(this.state.finalStartups)))
 	}
 
 	async componentDidMount(){
@@ -89,12 +90,11 @@ export default class Startups extends Component {
 
 		if((await AsyncStorage.getItem(this.props.componentId)) != null){
 			this.setState({
-				startups: JSON.parse(await AsyncStorage.getItem(this.props.componentId))
+				finalStartups: JSON.parse(await AsyncStorage.getItem(this.props.componentId))
 			})
 		}
 		// Load sheet
 		this.handleSheet("startups");
-		this.handleSheet("members");
 	}
 
 	componentWillUnmount(){
@@ -105,32 +105,22 @@ export default class Startups extends Component {
 
 	render() {
 		return (
-		  <ScrollView style={{backgroundColor: 'white'}}>
-  	  		{!this.state.finalStartups ? <LoadingCircle/> : this.state.finalStartups.map((startup, index) => {
-						if(startup.hidden == false){
-							if(Platform.OS == "android"){
-  	  		  		return(
-  	  		  		  <TouchableNativeFeedback key={index} onPress={() => {changeScreen(startup, "Startups")}}>
-										<View style={styles.listCardWrapper}>
-											{(startup.logo).slice(-3) === "svg" ? <ImageSvg style={styles.listCardImage} source={{ uri: startup.logo }}/> : <Image style={[styles.listCardImage, {resizeMode: 'contain'}]} source={{ uri: startup.logo }}/>}
-											<Text style={[styles.listCardText, styles.stakeholdersCardText]}>{startup.name}</Text>
-										</View>
-									</TouchableNativeFeedback>
-  	  		  		)
-							}
-							else{
-								return(
-  	  		  		  <TouchableHighlight underlayColor={'rgba(52,73,85,0.05)'} key={index} onPress={() => {changeScreen(startup, "Startups")}}>
-										<View style={styles.listCardWrapper}>
-											{(startup.logo).slice(-3) === "svg" ? <ImageSvg style={styles.listCardImage} source={{ uri: startup.logo }}/> : <Image style={[styles.listCardImage, {resizeMode: 'contain'}]} source={{ uri: startup.logo }}/>}
-											<Text style={styles.listCardText}>{startup.name}</Text>
-										</View>
-									</TouchableHighlight>
-								);
-							}
-						}
-  	  		})}
-		  </ScrollView>
+			<ScrollView style={{backgroundColor: 'white'}}>
+				{!this.state.finalStartups ? <LoadingCircle/> : this.state.finalStartups.map((startup, index) => {
+					if(startup.hidden == false){
+						return(
+							<View key={index} style={styles.listCardOuterWrapper}>
+								<DynamicButton style={styles.listCardWrapper} onPress={() => {changeScreen(startup, "Startups")}}>
+									<View style={styles.listCardInnerWrapper}>
+										{(startup.logo).slice(-3) === "svg" ? <ImageSvg style={styles.listCardImage} source={{ uri: startup.logo }}/> : <Image style={[styles.listCardImage, {resizeMode: 'cover'}]} source={{ uri: startup.logo }}/>}
+										<Text style={[styles.listCardText, styles.stakeholdersCardText]}>{startup.name}</Text>
+									</View>
+								</DynamicButton>
+							</View>
+						);
+					}
+				})}
+			</ScrollView>
 		);
 	}
 }

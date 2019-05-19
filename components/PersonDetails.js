@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, Image, View, Dimensions, TouchableNativeFeedback, Linking, Platform, TouchableHighlight, Clipboard } from 'react-native';
+import { ScrollView, Text, Image, View, Dimensions, Linking, Clipboard } from 'react-native';
 import HTML from 'react-native-render-html';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
