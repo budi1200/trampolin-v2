@@ -79,16 +79,14 @@ export default class Interact extends Component {
 	}
 
 	render() {
-		return (
-		  <View>
-  	  		{!this.state.vote ? <LoadingCircle/> : this.state.vote.map((vote, index) => {
-  	  		    return(
-						  		<View key={index} style={{ height: '100%', width: '100%' }}>
-                    <WebView source={{ uri: vote.url }} javaScriptEnabled={true} startInLoadingState={true}/>
-						  		</View>
-  	  		    )
-  	  		})}
-		  </View>
-		);
+		return(
+			<View>
+				<View style={{ height: '100%', width: '100%'}}>
+					{!this.state.vote ? <LoadingCircle/> : this.state.vote.map((vote) => {
+						return(<WebView key={vote.url} source={{uri: vote.url}} javaScriptEnabled={true} startInLoadingState={false}/>)
+					})}
+				</View>
+			</View>
+		)
 	}
 }
