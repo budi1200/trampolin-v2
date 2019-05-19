@@ -144,7 +144,7 @@ export const styles = StyleSheet.create({
     padding: 12
   },
   aboutTitle: {
-    color: '#554bb9',
+    color: primaryColor,
     fontSize: 24,
     fontFamily: 'Akrobat-Bold',
     marginBottom: 4,
@@ -204,7 +204,7 @@ export const styles = StyleSheet.create({
   },
   detailsTitle: {
     fontSize: 24,
-    color: '#554bb9',
+    color: primaryColor,
 		marginBottom: 4,
 		fontFamily: 'Akrobat-Bold'
   },
@@ -225,7 +225,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   detailsWebsiteText: {
-    color: '#554bb9',
+    color: primaryColor,
     fontSize: 16,
 		fontWeight: 'bold',
 		fontFamily: 'Akrobat-Bold'
@@ -286,7 +286,7 @@ export const styles = StyleSheet.create({
   },
   personDetailsName: {
     fontFamily: 'Akrobat-SemiBold',
-    marginTop: 16,
+    marginTop: 20,
     fontSize: 26,
     color: primaryColor
   },
@@ -298,8 +298,8 @@ export const styles = StyleSheet.create({
     fontWeight: '400'
   },
   personDetailsDescription: {
-    marginLeft: 16,
-    marginRight: 16,
+    marginLeft: 30,
+    marginRight: 30,
   },
   personDetailsContact: {
     marginTop: 20,
