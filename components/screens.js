@@ -13,6 +13,7 @@ import SideDrawer from './SideDrawer';
 import Details from './Details';
 //import DetailsSchedule from './no_use/DetailsSchedule';
 import CustomTopBarTitle from './CustomTopBarTitle';
+import PersonDetails from './PersonDetails';
 
 export function registerScreens(){
     Navigation.registerComponent('HomeScreen', () => App);
@@ -27,4 +28,5 @@ export function registerScreens(){
     Navigation.registerComponent('Details', () => Details);
     //Navigation.registerComponent('DetailsSchedule', () => DetailsSchedule);
     Navigation.registerComponent('CustomTopBarTitle', () => CustomTopBarTitle);
+    Navigation.registerComponent('PersonDetails', () => PersonDetails);
 }

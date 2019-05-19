@@ -1,5 +1,8 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native';
 
+export const primaryColor = 'rgb(0, 134, 200)';
+export const touchBackground = 'rgba(0, 134, 200, 0.24)';
+
 export const styles = StyleSheet.create({
   inner: {
     flex: 1,
@@ -274,5 +277,51 @@ export const styles = StyleSheet.create({
     padding: 6,
 		marginRight: 16,
 		fontFamily: 'Akrobat-SemiBold'
+  },
+  personDetailsPicture: {
+    width: 230, 
+    height: 230, 
+    resizeMode: 'cover', 
+    borderRadius: 230/2
+  },
+  personDetailsName: {
+    fontFamily: 'Akrobat-SemiBold',
+    marginTop: 16,
+    fontSize: 26,
+    color: primaryColor
+  },
+  personDetailsPosition: {
+    fontFamily: 'Akrobat-Regular',
+    marginTop: 2,
+    fontSize: 16,
+    color: '#020202',
+    fontWeight: '400'
+  },
+  personDetailsDescription: {
+    marginLeft: 16,
+    marginRight: 16,
+  },
+  personDetailsContact: {
+    marginTop: 20,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+  personDetailsContactIcon: {
+    paddingLeft: 14,
+    ...Platform.select({
+			ios: {
+        paddingTop: 13,
+        paddingRight: 13,
+        paddingBottom: 12,
+			},
+			android: {
+        paddingTop: 13,
+        paddingRight: 14,
+        paddingBottom: 13,
+			},
+		}),
+    backgroundColor: primaryColor,
+    borderRadius: 48
   }
 })

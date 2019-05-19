@@ -41,9 +41,35 @@ export function changeScreen(data, currentScreen){
       },
       options: {
         topBar: {
+          elevation: 0,
+          noBorder: true,
           title: {
-						text: 'Details: ' + data.name,
-						fontFamily: 'Akrobat-Bold'
+						text: data.name,
+						fontFamily: 'Akrobat-Bold',
+            alignment: 'center'
+          }
+        }
+      }
+    }
+  });
+}
+
+export function openPersonDetails(data, currentScreen){
+  Navigation.push(currentScreen, {
+    component: {
+      name: 'PersonDetails',
+      passProps: {
+        data: data,
+        screenSource: currentScreen
+      },
+      options: {
+        topBar: {
+          elevation: 0,
+          noBorder: true,
+          title: {
+						text: "Team member",
+            fontFamily: 'Akrobat-Bold',
+            alignment: 'center'
           }
         }
       }
@@ -63,7 +89,7 @@ export function detailsSchedule(data, screen){
         topBar: {
           title: {
 						text: 'Details',
-						fontFamily: 'Akrobat-Bold'
+						fontFamily: 'Akrobat-Bold',
           }
         }
       }

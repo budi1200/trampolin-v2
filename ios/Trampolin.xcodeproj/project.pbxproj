@@ -50,6 +50,7 @@
 		5462704F229041390033A5BA /* Akrobat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5462704C229041200033A5BA /* Akrobat-Bold.otf */; };
 		546270502290413E0033A5BA /* Akrobat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5462704D229041200033A5BA /* Akrobat-SemiBold.otf */; };
 		546270512290413E0033A5BA /* Akrobat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5462704D229041200033A5BA /* Akrobat-SemiBold.otf */; };
+		547235402291748B00FE1A22 /* Akrobat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5472353F2291747600FE1A22 /* Akrobat-Regular.otf */; };
 		756FAEC5F20F49A7802CD5E9 /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B583A301875F4C45808C173D /* libRNSVG-tvOS.a */; };
 		7F9C475700984C33BFC66822 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C170731FB6B42E0906663DF /* libRNSVG.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -433,6 +434,7 @@
 		4001106D22544ED1986042AC /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		5462704C229041200033A5BA /* Akrobat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Akrobat-Bold.otf"; path = "fonts/Akrobat-Bold.otf"; sourceTree = "<group>"; };
 		5462704D229041200033A5BA /* Akrobat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Akrobat-SemiBold.otf"; path = "fonts/Akrobat-SemiBold.otf"; sourceTree = "<group>"; };
+		5472353F2291747600FE1A22 /* Akrobat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Akrobat-Regular.otf"; path = "fonts/Akrobat-Regular.otf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		61EEDDBA81EA41B8AC9D01D7 /* ReactNativeNavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ReactNativeNavigationTests.xctest; sourceTree = "<group>"; };
 		698F063AAAB644DEA71FD518 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
@@ -654,8 +656,6 @@
 		54116BDB2290235600437431 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				5462704C229041200033A5BA /* Akrobat-Bold.otf */,
-				5462704D229041200033A5BA /* Akrobat-SemiBold.otf */,
 				DD178D91A5CC442F8AEDE771 /* libReactNativeNavigation.a */,
 				61EEDDBA81EA41B8AC9D01D7 /* ReactNativeNavigationTests.xctest */,
 				6C170731FB6B42E0906663DF /* libRNSVG.a */,
@@ -784,6 +784,7 @@
 		9D29738F2DFA46FBB6714F6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5472353F2291747600FE1A22 /* Akrobat-Regular.otf */,
 				D456366650414B029EF0E587 /* AntDesign.ttf */,
 				0B0EE93575AC4C4A9A55D3C0 /* Entypo.ttf */,
 				35D47399A8E8482399DEE74A /* EvilIcons.ttf */,
@@ -799,6 +800,8 @@
 				698F063AAAB644DEA71FD518 /* Octicons.ttf */,
 				C056AA50D18047798DEBD7AB /* SimpleLineIcons.ttf */,
 				B1F33298EE5F411FA38FC57D /* Zocial.ttf */,
+				5462704C229041200033A5BA /* Akrobat-Bold.otf */,
+				5462704D229041200033A5BA /* Akrobat-SemiBold.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1328,6 +1331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547235402291748B00FE1A22 /* Akrobat-Regular.otf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				B966094F5D3C4150B8611884 /* AntDesign.ttf in Resources */,

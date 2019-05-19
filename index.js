@@ -4,6 +4,7 @@ import { YellowBox, StyleSheet, Text, Platform } from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import { registerScreens } from './components/screens';
 YellowBox.ignoreWarnings(['Setting a timer']);
+YellowBox.ignoreWarnings(['Attempted to invoke']);
 
 registerScreens();
 

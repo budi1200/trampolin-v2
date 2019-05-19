@@ -61,10 +61,26 @@ export default class Startups extends Component {
 					if(this.state.mounted){
 	    	  	this.setState({
 	    	  	    [sheet]: result.data[sheet],
-						}, () => {AsyncStorage.setItem(this.props.componentId, JSON.stringify(this.state[sheet]))})
+						}, () => {sheet === 'startups' ? AsyncStorage.setItem(this.props.componentId, JSON.stringify(this.state[sheet])) : this.assignMembers()})
 					}
 	    	})
 	  })
+	}
+
+	assignMembers = () => {
+		var initialStartups = this.state.startups;
+		var modifiedStartups = [];
+
+		initialStartups.map((startup) => {
+			startup.members = [];
+			var members = this.state.members.filter(member => member.team_id === startup.id);
+			Object.assign(startup.members, members);
+			modifiedStartups.push(startup);
+		})
+
+		this.setState({
+			finalStartups: modifiedStartups
+		})
 	}
 
 	async componentDidMount(){
@@ -78,6 +94,7 @@ export default class Startups extends Component {
 		}
 		// Load sheet
 		this.handleSheet("startups");
+		this.handleSheet("members");
 	}
 
 	componentWillUnmount(){
@@ -89,7 +106,7 @@ export default class Startups extends Component {
 	render() {
 		return (
 		  <ScrollView style={{backgroundColor: 'white'}}>
-  	  		{!this.state.startups ? <LoadingCircle/> : this.state.startups.map((startup, index) => {
+  	  		{!this.state.finalStartups ? <LoadingCircle/> : this.state.finalStartups.map((startup, index) => {
 						if(startup.hidden == false){
 							if(Platform.OS == "android"){
   	  		  		return(

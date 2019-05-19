@@ -3,6 +3,8 @@ import { ScrollView, Text, Image, View, Dimensions, TouchableNativeFeedback, Lin
 import Carousel from 'react-native-banner-carousel';
 import HTML from 'react-native-render-html';
 
+import DynamicButton from './DynamicButton';
+import { openPersonDetails } from './customFunctions';
 import { styles } from './styles';
 
 const ImageWidth = Dimensions.get('window').width;
@@ -19,6 +21,8 @@ export default class Details extends Component{
   }
 
   render(){
+    const startup = this.props.data;
+
     // adds image urls to array
     var slideshow = [];
     slideshow.push(this.props.data.logo)
@@ -39,6 +43,19 @@ export default class Details extends Component{
           { this.props.data.description != '' ?
             <HTML html={this.props.data.description} baseFontStyle={{fontFamily: 'Akrobat-SemiBold'}} imagesMaxWidth={Dimensions.get('window').width} />
           : null }
+        </View>
+
+        <View style={{marginTop: 20, marginLeft: 10}}>
+          <Text>Team Members</Text>
+          {startup.members.map((member) => {
+            return(
+              <DynamicButton key={member.first_name+member.last_name} style={{padding: 10, marginTop: 20}} onPress={() => openPersonDetails(member, "Startups")}>
+                <View style={styles.listCardWrapper}>
+                  <Text style={styles.listCardText}>{member.first_name + " " + member.last_name}</Text>
+                </View>           
+              </DynamicButton>
+            )
+          })}
         </View>
         
         { this.props.data.website != "" ? Platform.OS == "android" ?

@@ -66,7 +66,7 @@ export default class App extends Component {
   handleSheet = (sheet) => {
     getSheetUrl(sheet, (url) => {
       axios.get(url).then(result => {
-				console.log(result, "result");
+				//console.log(result, "result");
         if(this.state.mounted){
           this.setState({
             [sheet]: result.data[sheet],
