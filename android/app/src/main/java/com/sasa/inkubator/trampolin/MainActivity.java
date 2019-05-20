@@ -1,4 +1,4 @@
-package com.trampolin;
+package com.sasa.inkubator.trampolin;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;

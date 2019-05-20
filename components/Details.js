@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, Image, View, Dimensions, Linking } from 'react-native';
+import { ScrollView, Text, Image, View, Dimensions, Linking, Alert } from 'react-native';
 import Carousel from 'react-native-banner-carousel';
 import HTML from 'react-native-render-html';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';

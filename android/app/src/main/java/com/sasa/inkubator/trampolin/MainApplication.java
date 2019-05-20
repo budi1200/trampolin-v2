@@ -1,4 +1,4 @@
-package com.trampolin;
+package com.sasa.inkubator.trampolin;
 
 import android.app.Application;
 
