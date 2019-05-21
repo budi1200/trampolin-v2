@@ -5,7 +5,6 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { styles } from './styles';
-import { configSch } from './no_use/scheduleConfig';
 import DynamicButton from './DynamicButton';
 
 class DrawerButton extends Component{

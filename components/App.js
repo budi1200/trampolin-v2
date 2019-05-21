@@ -20,7 +20,6 @@ import LoadingCircle from './LoadingCircle';
 import { getSheetUrl } from './trampolin_data';
 import { addIconTopBar, handleButtonPress } from './customFunctions';
 import { styles } from './styles';
-import { configSch } from './no_use/scheduleConfig';
 
 firebase.initializeApp(config);
 
@@ -96,51 +95,34 @@ export default class App extends Component {
 	}
 
 	changeScreen = (screen) => {
-		if(screen == "Schedule"){
-			Navigation.setDefaultOptions({
-				bottomTabs: {
-					titleDisplayMode: 'alwaysShow',
-				},
-				bottomTab: {
-					//selectedIconColor: 'rgb(236, 57, 139)',
-					//selectedTextColor: 'rgb(236, 57, 139)'
-					selectedIconColor: 'rgb(137, 119, 236)',
-					selectedTextColor: 'rgb(137, 119, 236)'
-				}
-			});
-
-			Navigation.setRoot(configSch);
-		}
-		else{
-			Navigation.setRoot({
-				root: {
-					sideMenu: {
-						id: 'SideMenu',
-						left: {
-							component: {
-								id: 'SideDrawer',
-								name: 'SideDrawer',
-								passProps: {
-									def: screen
-								}
+		Navigation.setRoot({
+			root: {
+				sideMenu: {
+					id: 'SideMenu',
+					left: {
+						component: {
+							id: 'SideDrawer',
+							name: 'SideDrawer',
+							passProps: {
+								def: screen
 							}
-						},
-						center: {
-							id: 'ChildTest',
-							stack: {
-								id: 'MainStack',
-								children: [{
-									component: {
-										id: screen,
-										name: screen
-									},
-								}]
-							}
+						}
+					},
+					center: {
+						id: 'ChildTest',
+						stack: {
+							id: 'MainStack',
+							children: [{
+								component: {
+									id: screen,
+									name: screen
+								},
+							}]
 						}
 					}
 				}
-			});
-		}
+			}
+		});
 	}
 
   render() {
