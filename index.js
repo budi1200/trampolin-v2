@@ -57,4 +57,12 @@ Navigation.events().registerAppLaunchedListener(() => {
       }
     }
   });
+
+  Navigation.setDefaultOptions({
+    statusBar: {
+      visible: true,
+      style: "dark",
+      backgroundColor: "white"
+    }
+   });
 });
