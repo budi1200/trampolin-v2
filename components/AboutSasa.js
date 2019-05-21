@@ -32,6 +32,8 @@ export default class AboutSasa extends Component {
 	static get options() {
     return {
       topBar: {
+				elevation: 0,
+				noBorder: true,
         title: {
           component: {
             name: 'CustomTopBarTitle',

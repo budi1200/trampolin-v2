@@ -108,9 +108,9 @@ export const styles = StyleSheet.create({
     marginRight: 6,
     marginTop: 3,
     marginBottom: 3,
-    borderColor: '#dadce0',
+    borderColor: '#e1e3e8',
     borderWidth: 1,
-    borderRadius: 6
+    borderRadius: 12
   },
   listCardWrapper: {
     paddingLeft: 16,
@@ -130,7 +130,7 @@ export const styles = StyleSheet.create({
     borderRadius: 96/2,
   },
   listCardText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '400',
 		color: 'black',
 		fontFamily: 'Akrobat-SemiBold'
@@ -142,13 +142,14 @@ export const styles = StyleSheet.create({
   },
   aboutTitle: {
     color: primaryColor,
-    fontSize: 24,
+    fontSize: 28,
     fontFamily: 'Akrobat-Bold',
     marginBottom: 4,
   },
   aboutDesc: {
-		paddingLeft: 4,
-		fontFamily: 'Akrobat-SemiBold'
+    paddingLeft: 4,
+    fontSize: 16,
+		fontFamily: 'Akrobat-Regular'
   },
 
   stakeholdersCardWrapper: {
