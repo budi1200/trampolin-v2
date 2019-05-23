@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import { Text, ScrollView, View, Image, AsyncStorage } from 'react-native';
 import { Navigation } from 'react-native-navigation';
-import ImageSvg from 'react-native-remote-svg'
+import ImageSvg from 'react-native-remote-svg';
+import moment from 'moment';
 
 import { getSheetUrl } from './trampolin_data';
 import axios from 'react-native-axios';
@@ -99,6 +100,10 @@ export default class Startups extends Component {
 		this.handleSheet("startups");
 	}
 
+	isPastSetDate = () => {
+		return moment().diff(moment(this.state.finalStartups[0].open_date, "YYYY-MM-DD"), 'days') < 1 ? true : false;
+	}
+
 	componentWillUnmount(){
 		this.setState({
 			mounted: false
@@ -108,20 +113,21 @@ export default class Startups extends Component {
 	render() {
 		return (
 			<ScrollView style={{backgroundColor: 'white'}}>
-				{!this.state.finalStartups ? <LoadingCircle/> : this.state.finalStartups.map((startup, index) => {
-					if(startup.hidden == false){
-						return(
-							<View key={index} style={styles.listCardOuterWrapper}>
-								<DynamicButton style={styles.listCardWrapper} onPress={() => {changeScreen(startup, "Startups")}}>
-									<View style={styles.listCardInnerWrapper}>
-										{(startup.logo).slice(-3) === "svg" ? <ImageSvg style={styles.listCardImage} source={{ uri: startup.logo }}/> : <Image style={[styles.listCardImage, {resizeMode: 'cover'}]} source={{ uri: startup.logo }}/>}
-										<Text style={[styles.listCardText, styles.stakeholdersCardText]}>{startup.name}</Text>
-									</View>
-								</DynamicButton>
-							</View>
-						);
-					}
-				})}
+				{!this.state.finalStartups ? <LoadingCircle/> : !this.isPastSetDate() ?
+					this.state.finalStartups.map((startup, index) => {
+						if(startup.hidden == false){
+							return(
+								<View key={index} style={styles.listCardOuterWrapper}>
+									<DynamicButton style={styles.listCardWrapper} onPress={() => {changeScreen(startup, "Startups")}}>
+										<View style={styles.listCardInnerWrapper}>
+											{(startup.logo).slice(-3) === "svg" ? <ImageSvg style={styles.listCardImage} source={{ uri: startup.logo }}/> : <Image style={[styles.listCardImage, {resizeMode: 'cover'}]} source={{ uri: startup.logo }}/>}
+											<Text style={[styles.listCardText, styles.stakeholdersCardText]}>{startup.name}</Text>
+										</View>
+									</DynamicButton>
+								</View>
+							);
+						}
+				}) : <View style={[styles.inner, {alignItems: 'center'}]}><Text style={{fontSize: 28, fontFamily: 'Akrobat-Bold', color: 'black'}}>Coming soon!</Text><Text style={{fontSize: 22, fontFamily: 'Akrobat-SemiBold', color: 'grey'}}>{moment(this.state.finalStartups[0].open_date).format('D. MMMM')}</Text></View>}
 			</ScrollView>
 		);
 	}

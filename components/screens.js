@@ -1,4 +1,5 @@
 import { Navigation } from 'react-native-navigation';
+import { Platform } from 'react-native';
 
 import App from './App';
 
@@ -14,6 +15,7 @@ import Details from './Details';
 //import DetailsSchedule from './no_use/DetailsSchedule';
 import CustomTopBarTitle from './CustomTopBarTitle';
 import PersonDetails from './PersonDetails';
+import Location from './Location';
 
 export function registerScreens(){
     Navigation.registerComponent('HomeScreen', () => App);
@@ -29,4 +31,5 @@ export function registerScreens(){
     //Navigation.registerComponent('DetailsSchedule', () => DetailsSchedule);
     Navigation.registerComponent('CustomTopBarTitle', () => CustomTopBarTitle);
     Navigation.registerComponent('PersonDetails', () => PersonDetails);
+    Platform.OS != "android" ? Navigation.registerComponent('Location', () => Location) : null;
 }
