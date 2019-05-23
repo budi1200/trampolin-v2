@@ -64,3 +64,4 @@ android/gradle.properties
 ios/Index
 fireConn.js
 android_ios.rar
+android/app/release/*
