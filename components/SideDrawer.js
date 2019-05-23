@@ -32,7 +32,7 @@ export default class SideDrawer extends Component {
 				<DrawerButton text="About Saša" icon="info-outline" screen="AboutSasa" active={this.state.currentScreen == "AboutSasa" ? true : false} currentScreen={this.state.currentScreen} updateCurrentScreen={this.updateCurrentScreen}/>
 				<DrawerButton text="About Trampolin" icon="trending-up" screen="AboutTrampolin" active={this.state.currentScreen == "AboutTrampolin" ? true : false} currentScreen={this.state.currentScreen} updateCurrentScreen={this.updateCurrentScreen}/>
 				<DrawerButton text="Interact" icon="checkbox-marked-outline" screen="Interact" active={this.state.currentScreen == "Interact" ? true : false} currentScreen={this.state.currentScreen} updateCurrentScreen={this.updateCurrentScreen}/>
-				{Platform.OS != "android" ? <DrawerButton text="Find us" icon="checkbox-marked-outline" screen="Location" active={this.state.currentScreen == "Location" ? true : false} currentScreen={this.state.currentScreen} updateCurrentScreen={this.updateCurrentScreen}/> : null }
+				{Platform.OS != "android" ? <DrawerButton text="Find us" icon="map-marker" screen="Location" active={this.state.currentScreen == "Location" ? true : false} currentScreen={this.state.currentScreen} updateCurrentScreen={this.updateCurrentScreen}/> : null }
 				<NetworkInfo/>
       </View>
     )

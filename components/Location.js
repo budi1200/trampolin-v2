@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import { Navigation } from 'react-native-navigation';
 import MapView, { Marker } from 'react-native-maps';
 import { addIconTopBar, handleButtonPress } from './customFunctions';
 
 export default class LoadingCircle extends Component{
+
+  constructor(props){
+    super(props);
+
+		Navigation.events().bindComponent(this);
+  }
 
   static get options() {
     return {

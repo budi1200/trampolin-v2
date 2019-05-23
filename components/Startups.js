@@ -127,7 +127,7 @@ export default class Startups extends Component {
 								</View>
 							);
 						}
-				}) : <View style={[styles.inner, {alignItems: 'center'}]}><Text style={{fontSize: 28, fontFamily: 'Akrobat-Bold', color: 'black'}}>Coming soon!</Text><Text style={{fontSize: 22, fontFamily: 'Akrobat-SemiBold', color: 'grey'}}>{moment(this.state.finalStartups[0].open_date).format('D. MMMM')}</Text></View>}
+				}) : <View style={[styles.inner, {alignItems: 'center'}]}><Text style={{fontSize: 28, fontFamily: 'Akrobat-Bold', color: 'black'}}>Coming soon!</Text><Text style={{fontSize: 22, fontFamily: 'Akrobat-SemiBold', color: 'grey'}}>{moment(this.state.finalStartups[0].open_date).format('MMMM Do')}</Text></View>}
 			</ScrollView>
 		);
 	}
